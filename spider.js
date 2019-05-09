@@ -41,9 +41,13 @@ async function getSheep() {
         }
         
         try {
-            await parserVedio(info)
-            await raw(info)
-            await download(info.url,info.title)
+            if(info.url.endsWith('m3u8')) {
+                await download(info.url,info.title)
+            } else {
+                await parserVedio(info)
+                await raw(info)
+                await download(info.url,info.title)
+            }
             info.done = true
             await fs.writeFileSync('data.json',JSON.stringify(db,"","\t"))
         } catch (e) {
@@ -133,12 +137,12 @@ async function download(url,title) {
     console.log('>> ' +title + '@' + url)
     await converter
         .setInputFile(url)
-        .setOutputFile('./sheep/' + title + '.mp4')
+        .setOutputFile(title + '.mp4')
         .start();
 }
 
 async function download2(url,title) {
     console.log('>> ' +title + '@' + url)
     await m3u8stream(url)
-    .pipe(fs.createWriteStream('./sheep/' + title + '.mp4'));  
+    .pipe(fs.createWriteStream(title + '.mp4'));  
 }

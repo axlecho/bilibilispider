@@ -5,7 +5,7 @@
   "main": "spider.js",
   "scripts": {
     "spider": "node spider.js --spider",
-    "sheep": "node spider.js -- sheep"
+    "sheep": "node spider.js --sheep"
   },
   "repository": {
     "type": "git",
