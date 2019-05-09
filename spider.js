@@ -63,7 +63,7 @@ async function getSheep() {
 
 var db = []
 async function spider() {
-    for(var page = 1;page <= 1;page ++) {
+    for(var page = 1;page <= 40;page ++) {
         await getId(page)
     }
     
