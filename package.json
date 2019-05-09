@@ -1,0 +1,34 @@
+{
+  "name": "bilibilispider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "spider.js",
+  "scripts": {
+    "spider": "node spider.js --spider",
+    "sheep": "node spider.js -- sheep"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axlecho/bilibilispider.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axlecho/bilibilispider/issues"
+  },
+  "homepage": "https://github.com/axlecho/bilibilispider#readme",
+  "dependencies": {
+    "async": "^2.6.2",
+    "cheerio": "^1.0.0-rc.3",
+    "child_process": "*",
+    "cli-color": "*",
+    "commander": "^2.20.0",
+    "m3u8-to-mp4": "^1.0.0",
+    "m3u8stream": "^0.6.2",
+    "progress-bar": "*",
+    "readline": "*",
+    "request": "*",
+    "request-progress": "*",
+    "request-promise": "*"
+  }
+}
