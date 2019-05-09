@@ -57,8 +57,9 @@ async function getSheep() {
     })
 }
 
+var db = []
 async function spider() {
-    for(var page = 1;page <= 40;page ++) {
+    for(var page = 1;page <= 1;page ++) {
         await getId(page)
     }
     
@@ -90,16 +91,8 @@ async function getId(page) {
             console.log('==============> ' + id)
         
             let info = await parser(id)
-            
-            if(info.url.endsWith('.m3u8')) {
-                await download(info.url,info.title)
-            } else {
-                await parserVedio(info)
-                await raw(info)
-                await download(info.url,info.title)
-                console.log(info)
-            }
-
+            console.log(info)
+            db.push(info)
         } catch (e) {
             console.log(e)
         }
